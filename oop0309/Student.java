@@ -1,18 +1,19 @@
 package cn.face;
 
 public class Student {
-    double chinese;
-    double math;
-    double english;
-    double allscience;
-    String sname;
 
-    public String getSname() {
-        return sname;
+    private  String  stuName;
+    private  double  chinese;
+    private  double  math;
+    private  double  english;
+    private  double  science;
+
+    public String getStuName() {
+        return stuName;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
     public double getChinese() {
@@ -39,15 +40,27 @@ public class Student {
         this.english = english;
     }
 
-    public double getAllscience() {
-        return allscience;
+    public double getScience() {
+        return science;
     }
 
-    public void setAllscience(double science) {
-        this.allscience = allscience;
+    public void setScience(double science) {
+        this.science = science;
     }
 
-    public double avgScore(){
-        return ((getChinese() + getEnglish() + getMath() + getAllscience()) / 4.0);
+    //求平均分的方法
+    public  double  getAvgScore(){
+        return  (this.chinese+this.math+this.english+this.science)/4;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "stuName='" + stuName + '\'' +
+                ", chinese=" + chinese +
+                ", math=" + math +
+                ", english=" + english +
+                ", science=" + science +
+                '}';
     }
 }
