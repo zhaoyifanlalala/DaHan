@@ -1,5 +1,18 @@
 package homework;
-
+/*
+4）销售员工类，实现员工接口
+属性：
+销售的总金额
+基本工资
+方法
+1. 设置销售的总金额
+2. 重写计算工资方法：
+基本工资+提成。
+提成的计算：
+当销售额再10000 以下时，则提成10%，
+等销售额再10000-100000之间是，则提成15%。
+再 100000以上是，提成18%。
+ */
 public class SalesMan implements Employee {
     private String name;
     private double totalSalesAmount;

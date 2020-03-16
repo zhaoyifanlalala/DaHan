@@ -1,5 +1,14 @@
 package homework;
-
+/*
+3）小时工类，实现员工接口
+属性：
+工作的小时，每小时工资。
+方法：
+1. 设置工作的小时
+2. 设置每小时的工资。
+3. 重写计算工资方法：
+小时工没有基本工资，他的工资就是工作的小时*每小时工资。
+ */
 public class HourEmployee implements Employee {
     private String name;
     private int hour;
@@ -45,7 +54,12 @@ public class HourEmployee implements Employee {
     }
 
     @Override
-    public double salary() {
+    public double Getsalary() {
         return hour * hour_salary;
+    }
+
+    @Override
+    public String GetName() {
+        return name;
     }
 }
