@@ -55,7 +55,4 @@ public class Student {
                 ", courses=" + courses +
                 '}';
     }
-    public void insertCourse(Course course){
-        this.courses.add(course);
-    }
 }
