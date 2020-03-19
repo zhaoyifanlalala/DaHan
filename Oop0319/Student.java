@@ -17,11 +17,10 @@ public class Student {
     public Student() {
     }
 
-    public Student(String stuname, int stuid) {
+    public Student(String stuname, int stuid, Set<Course> courses) {
         this.stuname = stuname;
         this.stuid = stuid;
-        this.courses =new HashSet<Course>();
-
+        this.courses = courses;
     }
 
     public String getStuname() {
@@ -40,6 +39,14 @@ public class Student {
         this.stuid = stuid;
     }
 
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -47,5 +54,8 @@ public class Student {
                 ", stuid=" + stuid +
                 ", courses=" + courses +
                 '}';
+    }
+    public void insertCourse(Course course){
+        this.courses.add(course);
     }
 }
