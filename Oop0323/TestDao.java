@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class TestDao {
     public static void main(String[] args) {
         Dao<User> dao = new Dao<User>();
-        dao.map = new HashMap<String, User>();
+        dao.map = new HashMap<String, User>();          //为什么不写这个会出现空指针异常错误
         dao.save("1",new User(1,"张三"));
         dao.save("2",new User(2,"李四"));
         dao.save("3",new User(3,"王五"));
