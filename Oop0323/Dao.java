@@ -1,6 +1,7 @@
 package fanxing;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +34,12 @@ public class Dao<T> {
     }
 
     public List<T> list() {
-        List<T> list = new ArrayList<T>();
-        return list();
+        List  list=new ArrayList();
+        Collection con=map.values();//返回的是所有值的集合  集合类型是 Collection
+        list.addAll(con); //把集合添加到 list
+        return  list;
+//        List<T> list = new ArrayList<T>();
+//        return list();
     }
 
     public void delete(String id) {

@@ -1,6 +1,7 @@
 package fanxing;
 
 import java.util.HashMap;
+import java.util.List;
 
 /*
 定义一个测试类 分别对上述方法进行测试      //list()没写出来
@@ -13,6 +14,10 @@ public class TestDao {
         dao.save("2",new User(2,"李四"));
         dao.save("3",new User(3,"王五"));
         dao.save("4",new User(4,"小二"));
+        List<User> list=dao.list();
+        for (User u:list) {
+            System.out.println(u.toString());
+        }
         //save
         System.out.println(dao.map);
         //get
