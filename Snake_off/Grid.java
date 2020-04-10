@@ -43,6 +43,7 @@ public class Grid {
         int SnakeBodyLength = width/3;
         int x = width/2;
         int y = height/2;
+        status[x][y]=true;
         return snake;
     }
 
@@ -51,25 +52,28 @@ public class Grid {
      * @return
      */
     public Node createFood() {//创建的事务必须是在棋盘中...
-
-        
+        Random random = new Random();
+        int x,y;
+        while (true) {
+            x = (int) (Math.random()*width);
+            y = (int) (Math.random()*height);
+            if (!status[x][y]){
+                break;
+            }
+        }
+        food = new Node(x,y);
         return food;
     }
 
     /**
      * 贪吃蛇往snakeDirection方向移动一格
      *
-     * @return 如果游戏结束，返回false，否则返回true
      */
-    public boolean nextRound() {
+    public void nextRound() {
 
 
-
-
-
-        return false;
     }
-
+    //自动生成的
     public void changeDirection(Direction newDirection) {
         if (snakeDirection.compatibleWith(newDirection)) {
             snakeDirection = newDirection;
