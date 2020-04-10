@@ -40,10 +40,18 @@ public class Grid {
      */
     private Snake initSnake() { //初始化的贪吃蛇的长度不能过长 自己可以定义
         snake = new Snake();
-        int SnakeBodyLength = width/3;
+        Node snakeNode = null;
+        
         int x = width/2;
         int y = height/2;
-        status[x][y]=true;
+
+        for (int i = 0; i < 6; i++) {
+            snakeNode = new Node(x,y);
+            snake.addTail(snakeNode);
+            x++;
+        }
+        snake.getBody().forEach(this::occupy);
+
         return snake;
     }
 
@@ -70,7 +78,16 @@ public class Grid {
      *
      */
     public void nextRound() {
+        occupy(snake.getHead());
+        Node node = snake.move(snakeDirection);
 
+        // 吃到食物
+        if (isFood(snake.getHead())) {
+            snake.addTail(node);
+            createFood();
+        } else {
+            dispose(node);
+        }
 
     }
     //自动生成的

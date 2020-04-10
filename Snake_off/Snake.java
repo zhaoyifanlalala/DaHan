@@ -26,24 +26,26 @@ public class Snake {
        //控制蛇往哪个方向移动 原理:蛇的最后一个节点到蛇最前面 
         int x = body.getFirst().getX();
         int y = body.getFirst().getY();
+        Node node = null;
         switch (direction) {
             case UP:
                 // 向上移动
-                y--;
+                node = new Node(x,y - 1);
                 break;
             case RIGHT:
                 // 向右移动
-                x++;
+                node = new Node(x + 1, y);
                 break;
             case DOWN:
                 // 向下移动
-                y++;
+                node = new Node(x,y + 1);
                 break;
             case LEFT:
                 // 向左移动
-                x--;
+                node = new Node(x - 1,y);
                 break;
         }
+        body.addFirst(node);
         return body.removeLast();
     }
 

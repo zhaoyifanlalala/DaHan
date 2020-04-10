@@ -9,6 +9,7 @@ public class SnakeApp implements Runnable {
     GameView gameView;
     GameController gameController;
 
+    @Override
     public void run() {
 
         grid = new Grid(Settings.DEFAULT_GRID_WIDTH / Settings.DEFAULT_NODE_SIZE,

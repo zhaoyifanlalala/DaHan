@@ -60,6 +60,7 @@ public class GameController implements Runnable, KeyListener {
     /**
      * 按一定速率自动移动贪吃蛇
      */
+    @Override
     public void run() {
 
         while (running) {
@@ -72,7 +73,6 @@ public class GameController implements Runnable, KeyListener {
                 this.grid.init();
                 restart = false;
             }else {
-                if ()
                 this.grid.nextRound();
             }
             this.gameView.draw();
